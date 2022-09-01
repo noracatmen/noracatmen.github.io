@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>JavaScript Basics</title>
+<meta charset="utf-8">
+<title>JavaScript Basics</title>
 </head>
 <body>
 
-  <form>
+	<!--   <form>
     <input type="text">
-    <!-- <button>Post</button> -->
+    <button>Post</button>
   </form>
-  <div></div>
-  <script>
-  'use strict';
+  <div></div> -->
 
-  {
-    document.querySelector('form').addEventListener('submit', e => {
-      e.preventDefault();
-      let text = document.querySelector('input');
-      console.log(text.value);
 
-      const p = document.createElement('p');
-      p.textContent = text.value;
-      document.querySelector('div').appendChild(p);
-      text.value = '';
-      text.focus();
-    });
-  }
-  </script>
+	<input placeholder="翻訳しな～" name="name" />
+	<p id="log"></p>
+
+
+
+
+	<script>
+		'use strict';
+
+		const input = document.querySelector('input');
+		const log = document.getElementById('log');
+
+		input.addEventListener('change', updateValue);
+
+		function updateValue(e) {
+			log.textContent = e.target.value;
+		}
+
+		/*   {
+		 document.querySelector('form').addEventListener('submit', e => {
+		 e.preventDefault();
+		 let text = document.querySelector('input');
+		 console.log(text.value);
+
+		 const p = document.createElement('p');
+		 p.textContent = text.value;
+		 document.querySelector('div').appendChild(p);
+		 text.value = '';
+		 text.focus();
+		 });
+		 } */
+	</script>
 </body>
 </html>
