@@ -29,6 +29,8 @@
 
 		function updateValue(e) {
 			log.textContent = e.target.value;
+			input.value = '';
+			input.focus();
 		}
 
 		/*   {
